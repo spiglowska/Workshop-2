@@ -1,9 +1,13 @@
-CREATE TABLE `users` (
-     `id` int(11) NOT NULL,
-     `username` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-     `email` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-     `password` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+CREATE TABLE if not exists users
+(
+    id       int(11) AUTO_INCREMENT,
+    email    VARCHAR(255) NOT NULL UNIQUE,
+    username VARCHAR(255) NOT NULL,
+    password VARCHAR(60)  NOT NULL,
+    PRIMARY KEY (id)
+
+);
+SET GLOBAL time_zone = '+2:00';
 
 
 
